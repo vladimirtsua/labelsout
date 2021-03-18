@@ -36,42 +36,49 @@
 
 /* FEED */
 .main_feed{
-    width: 70%;
-    display: block;
-    text-align: center;
-    align-items: center;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: 50px;
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
 }
 #more {display: none;}
 
 /* MUST READ */
-.must_read{
+/* .must_read{
     width: 30%;
     display: inline-block;
     margin-top: 50px;
     margin-right: 10px;
     margin-left: 10px;  
-}
-.must_read:hover,
+} 
+ .must_read:hover,
 .must_read:focus{
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+} */
+.new_feed{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 2em;
+margin-top: 50px;
+margin-left: 30px;
+margin-right: 30px;
 }
+ 
+
 .new_feed_img{
     width: 200px;
     display: block;
     margin-right: auto;
     margin-left: auto;
 }
-.new_feed_p{
+/* .new_feed_p{
     padding-left: 20px;
     padding-right: 20px;
 }
 .new_feed_title{
     text-align: center;
-}
+} */
 /* NEWS PAGE */
+
+
 
 .news_img{
     display: block;
@@ -139,3 +146,73 @@
 .people_card_img{
     width: 250px;
 }
+
+
+
+.social {
+    list-style-type: none;
+    width: 200px;
+    height: 220px;
+    position: fixed;
+    margin-top: 20px;
+    perspective: 1000px;
+  }
+  
+  .social li a {
+    display: block;
+    height: 40px;
+    width: 40px;
+    background: #222;
+    border-bottom: 1px solid #333;
+    font: normal normal normal
+    16px/20px 
+    'FontAwesome', 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    color: #fff;
+    -webkit-font-smoothing: antialiased;
+    padding: 10px;
+    text-decoration: none;
+    text-align: center;
+    transition: background .5s ease .300ms
+  }
+  
+  .social li:first-child  a:hover { background: #3b5998 }
+  .social li:nth-child(2) a:hover { background: #eea300 }
+  .social li:nth-child(3) a:hover { background: #ea4c89 }
+
+  
+  .social li:first-child a { border-radius: 0 5px 0 0 }
+  .social li:last-child  a { border-radius: 0 0 5px 0 }
+      
+  .social li a span {
+    width: 100px;
+    float: left;
+    text-align: center;
+    background: #222;
+    color: #fff;
+    margin: -25px 70px;
+    padding: 8px;
+    transform-origin: 0;
+    visibility: hidden;
+    opacity: 0;
+    transform: rotateY(45deg);
+    border-radius: 5px;
+    transition: all .5s ease .300ms
+  }
+  
+  .social li span:after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    left: -20px;
+    top: 7px;
+    border: 10px solid transparent;
+    border-right: 10px solid #222;
+  }
+  
+  .social li a:hover span {
+    visibility: visible;
+    opacity: 1;
+    transform: rotateY(0)
+  }
